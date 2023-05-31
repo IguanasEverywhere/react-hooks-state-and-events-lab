@@ -3,14 +3,15 @@ import Item from "./Item";
 
 function ShoppingList({ items }) {
 
-  const [selectedCategory, setSelectedCategory] = useState("Filter by category");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   function handleChange(e) {
     setSelectedCategory(e.target.value);
   }
 
+
   let itemsToDisplay = items.filter((item) => {
-    if (selectedCategory === "Filter by category") {
+    if (selectedCategory === "All") {
       return true;
     } else {
       return item.category === selectedCategory
